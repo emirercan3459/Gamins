@@ -11,25 +11,12 @@ function Iletisim() {
 
   const [bildirimGonderildi, setBildirimGonderildi] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Burada normalde form gönderme işlemleri (API'ye gönderme vb.) yapılır.
-    // Şimdilik sadece bildirimi gösteriyoruz.
     setBildirimGonderildi(true);
-    // Formu temizleyebiliriz (isteğe bağlı)
-    setFormData({
-      adSoyad: "",
-      eposta: "",
-      mesaj: "",
-    });
-    // Bildirimi bir süre sonra gizleyebiliriz (isteğe bağlı)
     setTimeout(() => {
       setBildirimGonderildi(false);
-    }, 3000); // 3 saniye sonra gizle
+    }, 3000);
   };
 
   return (
@@ -44,6 +31,7 @@ function Iletisim() {
           </div>
         </div>
       </div>
+
       <div className="row">
         <div className="col-md-8">
           <h2 className="mb-4">İletişim</h2>
@@ -59,6 +47,7 @@ function Iletisim() {
               <br />
             </p>
           </div>
+
           <h2 className="mb-4">Resmi Bilgilerimiz</h2>
           <div className="row g-3">
             <p>
@@ -70,60 +59,36 @@ function Iletisim() {
               <br />
             </p>
           </div>
+
           <h2 className="mb-4">Bize Ulaşın</h2>
           {bildirimGonderildi && (
             <div className="alert alert-success" role="alert">
               Bildirim gönderildi!
             </div>
           )}
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="adSoyad" className="form-label">
-                Ad Soyad
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="adSoyad"
-                name="adSoyad"
-                value={formData.adSoyad}
-                onChange={handleChange}
-                required
-              />
+
+          <div className="row">
+            <div className="col-md-6">
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="adSoyad" className="form-label">Ad Soyad</label>
+                  <input type="text" className="form-control" id="adSoyad" name="adSoyad" value={formData.adSoyad} onChange={handleChange} required/>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="eposta" className="form-label">E-posta Adresi</label>
+                  <input type="email" className="form-control" id="eposta" name="eposta" value={formData.eposta} onChange={handleChange} required />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="mesaj" className="form-label">Mesaj</label>
+                  <textarea className="form-control" id="mesaj" name="mesaj" rows="3" value={formData.mesaj} onChange={handleChange} required></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Gönder</button>
+              </form>
             </div>
-            <div className="mb-3">
-              <label htmlFor="eposta" className="form-label">
-                E-posta Adresi
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="eposta"
-                name="eposta"
-                value={formData.eposta}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="mesaj" className="form-label">
-                Mesaj
-              </label>
-              <textarea
-                className="form-control"
-                id="mesaj"
-                name="mesaj"
-                rows="3"
-                value={formData.mesaj}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Gönder
-            </button>
-          </form>
+
+          </div>
         </div>
+
         <div className="col-md-4">
           <h2 className="mb-4">Adresimiz</h2>
           <MapEmbed />
