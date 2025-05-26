@@ -1,6 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-function Header() {
+import { Link, useNavigate } from 'react-router-dom';
+function Header({ isLoggedIn, handleLogout }) {
+
+  const performLogout = () => {
+    handleLogout();
+    navigate('/');
+  };
+
     return (
         <>
 		<div className="page-logo py-4">

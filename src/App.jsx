@@ -10,10 +10,15 @@ import Footer from "./components/Footer";
 import HaberDetay from './pages/HaberDetay';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("isLoggedIn"));
+    const handleLogout = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+  };
   return (
     <BrowserRouter>
       <div className="App">
-        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
         <main>
           <Routes>
             <Route path="/" element={<Home />}/>
@@ -21,7 +26,7 @@ function App() {
             <Route path="/hakkimizda" element={<Hakkimizda />}/>
             <Route path="/iletisim" element={<Iletisim />}/>
             <Route path="/giris" element={<GirisYap />} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-            <Route path="/haber/:haberId" element={<HaberDetay />} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+            <Route path="/haber/:haberId" element={<HaberDetay />} isLoggedIn={isLoggedIn}/>
           </Routes>
         </main>
         <Footer />
