@@ -1,5 +1,5 @@
-import { React } from 'react'
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Home from "./pages/Anasayfa";
 import Hakkimizda from "./pages/Hakkimizda";
 import Haberler from "./pages/Haberler";
