@@ -2,11 +2,6 @@ import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 function Header({ isLoggedIn, handleLogout }) {
 
-  const performLogout = () => {
-    handleLogout();
-    navigate('/');
-  };
-
     return (
         <>
 		<div className="page-logo py-4">
@@ -36,7 +31,7 @@ function Header({ isLoggedIn, handleLogout }) {
 						<a href="https://youtube.com/@emirercan3459" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
 						<a>|</a>
               			{isLoggedIn ? (
-                			<a onClick={performLogout} style={{ textDecoration: 'none', cursor: 'pointer', fontSize: '18px' }}>
+                			<a onClick={handleLogout} style={{ textDecoration: 'none', cursor: 'pointer', fontSize: '18px' }}>
                   				<i className="fas fa-sign-out-alt"></i> {localStorage.getItem('username')}
                 			</a>
               			) : (
