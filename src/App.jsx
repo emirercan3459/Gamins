@@ -29,8 +29,8 @@ function App() {
             <Route path="/haberler" element={<Haberler />}/>
             <Route path="/hakkimizda" element={<Hakkimizda />}/>
             <Route path="/iletisim" element={<Iletisim />}/>
-            <Route path="/giris" element={<GirisYap />} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-            <Route path="/haber/:haberId" element={<HaberDetay />} isLoggedIn={isLoggedIn}/>
+            <Route path="/giris" element={<GirisYap isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/haber/:haberId" element={<HaberDetay isLoggedIn={isLoggedIn} />} />
           </Routes>
         </main>
         <Footer />
