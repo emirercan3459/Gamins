@@ -11,9 +11,18 @@ function Iletisim() {
 
   const [bildirimGonderildi, setBildirimGonderildi] = useState(false);
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setBildirimGonderildi(true);
+    setFormData({
+      adSoyad: "",
+      eposta: "",
+      mesaj: "",
+    });
     setTimeout(() => {
       setBildirimGonderildi(false);
     }, 3000);
@@ -72,15 +81,15 @@ function Iletisim() {
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="adSoyad" className="form-label">Ad Soyad</label>
-                  <input type="text" className="form-control" id="adSoyad" name="adSoyad" value={formData.adSoyad} required/>
+                  <input type="text" className="form-control" id="adSoyad" name="adSoyad" value={formData.adSoyad} onChange={handleChange} required/>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="eposta" className="form-label">E-posta Adresi</label>
-                  <input type="email" className="form-control" id="eposta" name="eposta" value={formData.eposta}required />
+                  <input type="email" className="form-control" id="eposta" name="eposta" value={formData.eposta} onChange={handleChange} required />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="mesaj" className="form-label">Mesaj</label>
-                  <textarea className="form-control" id="mesaj" name="mesaj" rows="3" value={formData.mesaj} required></textarea>
+                  <textarea className="form-control" id="mesaj" name="mesaj" rows="3" value={formData.mesaj} onChange={handleChange} required></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">Gönder</button>
               </form>
