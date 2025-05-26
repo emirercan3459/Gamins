@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function GirisYap({ isLoggedIn, setIsLoggedIn }) {
+function GirisYap({ isLoggedIn,setIsLoggedIn }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -12,6 +12,7 @@ function GirisYap({ isLoggedIn, setIsLoggedIn }) {
         if (username === 'admin' && password === 'admin123') {
             localStorage.setItem('isLoggedIn', true);
             localStorage.setItem('username', username);
+            setIsLoggedIn(true);
             setError('');
             navigate('/');
         } else {

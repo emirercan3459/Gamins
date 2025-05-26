@@ -31,9 +31,7 @@ function Header({ isLoggedIn, handleLogout }) {
 						<a href="https://youtube.com/@emirercan3459" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
 						<a>|</a>
               			{isLoggedIn ? (
-                			<a onClick={handleLogout} style={{ textDecoration: 'none', cursor: 'pointer', fontSize: '18px' }}>
-                  				<i className="fas fa-sign-out-alt"></i> {localStorage.getItem('username')}
-                			</a>
+SSS
               			) : (
                 			<Link className="nav-link" to="/giris" style={{ fontSize: '18px' }}><i className="fas fa-user"></i> Giriş Yap</Link>
               			)}
