@@ -28,6 +28,14 @@ function Header() {
 						<a href="https://discord.gg/emirfw" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord"></i></a>
 						<a href="https://instagram.com/emirercan_" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
 						<a href="https://youtube.com/@emirercan3459" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
+						<a>|</a>
+              			{isLoggedIn ? (
+                			<button className="btn btn-link nav-link" onClick={performLogout} style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                  				<i className="fas fa-sign-out-alt"></i> Çıkış Yap
+                			</button>
+              			) : (
+                			<Link className="nav-link" to="/giris"><i className="fas fa-user"></i> Giriş Yap</Link>
+              			)}
 					</div>
 					</div>
 				</div>

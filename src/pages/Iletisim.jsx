@@ -70,14 +70,15 @@ function Iletisim() {
           </div>
 
           <h2 className="mb-4">Bize Ulaşın</h2>
+
+          <div className="row">
+            <div className="col-md-6">
+				
           {bildirimGonderildi && (
             <div className="alert alert-success" role="alert">
               Bildirim gönderildi!
             </div>
           )}
-
-          <div className="row">
-            <div className="col-md-6">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="adSoyad" className="form-label">Ad Soyad</label>
