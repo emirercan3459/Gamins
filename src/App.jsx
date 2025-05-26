@@ -11,7 +11,7 @@ import HaberDetay from './pages/HaberDetay';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn') === true;
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(loggedIn);
   }, []);
   const handleLogout = () => {
