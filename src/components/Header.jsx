@@ -36,11 +36,11 @@ function Header({ isLoggedIn, handleLogout }) {
 						<a href="https://youtube.com/@emirercan3459" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
 						<a>|</a>
               			{isLoggedIn ? (
-                			<button className="btn btn-link nav-link" onClick={performLogout} style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                			<a onClick={performLogout} style={{ textDecoration: 'none', cursor: 'pointer' }}>
                   				<i className="fas fa-sign-out-alt"></i> Çıkış Yap
-                			</button>
+                			</a>
               			) : (
-                			<Link className="nav-link" to="/giris"><i className="fas fa-user"></i> Giriş Yap</Link>
+                			<Link className="nav-link" to="/giris"><i className="fas fa-user"></i></Link>
               			)}
 					</div>
 					</div>

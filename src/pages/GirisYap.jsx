@@ -3,31 +3,22 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function GirisYap({ setIsLoggedIn }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const KULLANICI_ADI = "admin";
-  const SIFRE = "admin123";
-  useEffect(() => {
-    const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
-    if (storedIsLoggedIn === "true") {
-      navigate("/");
-    }
-  }, [navigate]);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (username === KULLANICI_ADI && password === SIFRE) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("isLoggedIn", "true");
-      setIsLoggedIn(true);
-      setError("");
-      navigate("/");
-    } else {
-      setError("Kullanıcı adı veya şifre hatalı!");
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        if (username === 'admin' && password === 'admin123') {
+            localStorage.setItem('isLoggedIn', true);
+            localStorage.setItem('username', username);
+            setError('');
+            navigate('/');
+        } else {
+            setError('Kullanıcı adı veya şifre hatalı!');
+        }
     }
-  };
 
   return (
     <div className="container my-5">
@@ -37,7 +28,7 @@ function GirisYap({ setIsLoggedIn }) {
             <div className="card-body">
               <h2 className="card-title text-center mb-4">Giriş Yap</h2>
               {error && <div className="alert alert-danger">{error}</div>}
-              <form onSubmit={handleLogin}>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="username" className="form-label">
                     Kullanıcı Adı

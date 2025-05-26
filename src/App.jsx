@@ -9,10 +9,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HaberDetay from './pages/HaberDetay';
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("isLoggedIn"));
-    const handleLogout = () => {
-    localStorage.removeItem("username");
-    localStorage.removeItem("isLoggedIn");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
     setIsLoggedIn(false);
   };
   return (
