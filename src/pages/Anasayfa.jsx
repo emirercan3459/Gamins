@@ -10,6 +10,7 @@ function Anasayfa() {
             .then(res => res.json())
            .then(data => {
                setDolarData(data["USD"]);
+               setEuroData(data["EUR"]);
             })
            .catch(err => console.error("Döviz verisi alınamadı:", err));
     }, []);
