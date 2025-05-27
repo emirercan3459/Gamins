@@ -5,6 +5,7 @@ function GirisYap({ isLoggedIn,setIsLoggedIn }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -12,6 +13,8 @@ function GirisYap({ isLoggedIn,setIsLoggedIn }) {
             localStorage.setItem('isLoggedIn', true);
             localStorage.setItem('username', username);
             setIsLoggedIn(true);
+            setError('');
+            navigate('/');
         } else {
             setError('Kullanıcı adı veya şifre hatalı!');
         }
