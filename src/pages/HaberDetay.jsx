@@ -3,7 +3,15 @@ import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 import haberler from '../data/haberler';
 
-function HaberDetay() {
+function HaberDetay({ isLoggedIn }) {
+    if (!isLoggedIn) {
+        return (
+            <div className="container my-5 text-center">
+                <h2>Haber Detayına Erişmek İçin Giriş Yapmalısınız</h2>
+            </div>
+        );
+    }
+
     const { haberId } = useParams();
     const [haber, setHaber] = useState(null);
 
@@ -21,7 +29,7 @@ function HaberDetay() {
     if (!haber) {
         return <div className="container my-5 text-center">Haber bulunamadı.</div>;
     }
-
+    
     const haberaciklama = DOMPurify.sanitize(haber.haber_uzun_aciklama);
 
     return (
