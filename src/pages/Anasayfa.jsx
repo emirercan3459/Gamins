@@ -6,6 +6,7 @@ import EnCokOkunanlar from "../components/EnCokOkunanlar";
 function Anasayfa() {
     const [dolarData, setDolarData] = useState(null);
     const [euroData, setEuroData] = useState(null);
+    const [sliderHaberler, setSliderHaberler] = useState([]);
     useEffect(() => {
         fetch("https://finans.truncgil.com/today.json")
             .then(res => res.json())
@@ -14,7 +15,7 @@ function Anasayfa() {
                setEuroData(data["EUR"]);
             })
            .catch(err => console.error("Döviz verisi alınamadı:", err));
-           
+
         const karisik = [...haberler].sort(() => 0.5 - Math.random()).slice(0, 2);
         setSliderHaberler(karisik);
     }, []);
