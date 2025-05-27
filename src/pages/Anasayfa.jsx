@@ -56,44 +56,7 @@ function Anasayfa() {
 
                     <div className="col-md-3">
                         <h2 className="mb-4 mt-4">En Çok Okunanlar</h2>
-
-                        <div className="encok-okunanlar row">
-                            <div className="d-flex align-items-center">
-                                <img src="assets/img/haber1.png" alt="Placeholder" className="me-3" />
-                                <div id="encokokunan-1">
-                                    <Link to="haberler/1">
-                                        <h5 className="mb-0">Steam Kış İndirimleri</h5>
-                                        <small className="text-white">Admin tarafından paylaşıldı!</small>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-
-                        <div className="encok-okunanlar row">
-                            <div className="d-flex align-items-center">
-                                <img src="assets/img/haber2.png" alt="Placeholder" className="me-3" />
-                                <div id="encokokunan-2">
-                                    <Link to="haberler/2">
-                                        <h5 className="mb-0">GTA 6 Erken Erişim Dolandırıcılığı!</h5>
-                                        <small className="text-white">Admin tarafından paylaşıldı!</small>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-
-                        <div className="encok-okunanlar row">
-                            <div className="d-flex align-items-center">
-                                <img src="assets/img/haber6.png" alt="Placeholder" className="me-3" />
-                                <div id="encokokunan-6">
-                                    <Link to="haberler/6">
-                                        <h5 className="mb-0">Epic Games'in Yeni Ücretsiz Oyunu!</h5>
-                                        <small className="text-white">Admin tarafından paylaşıldı!</small>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                        <EnCokOkunanlar /> 
                     </div>
                 {dolarData && (
                     <div className="row">
