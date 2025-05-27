@@ -26,7 +26,7 @@ function Anasayfa() {
                 <div className="carousel-inner">
                     {sliderHaberler.map((haber, index) => (
                         <div key={haber.haber_id} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                            <div className="slider slide" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${haber.haber_resim})`, backgroundSize: cover, backgroundRepeat: no-repeat, backgroundPosition: center}}>
+                            <div className="slider slide" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${haber.haber_resim})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center"}}>
                                 <Link to={`/haberler/${haber.haber_id}`} className="text-white text-decoration-none">
                                     <span className="h1">{haber.haber_baslik}</span>
                                     <br />
