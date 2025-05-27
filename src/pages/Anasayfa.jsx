@@ -14,15 +14,7 @@ function Anasayfa() {
     }, []);
     return (
         <>
-        {dolarData && (
-    <div className="container mt-4">
-        <div className="alert alert-info text-center">
-            <strong>💵 Dolar Alış:</strong> {dolarData["Alış"]} ₺ &nbsp; | &nbsp;
-            <strong>Satış:</strong> {dolarData["Satış"]} ₺ &nbsp; | &nbsp;
-            <strong>Değişim:</strong> {dolarData["Değişim"]}
-        </div>
-    </div>
-)}
+
             <div id="newsSlider" className="carousel slide container mt-5" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -53,8 +45,23 @@ function Anasayfa() {
                     <span className="visually-hidden">İleri</span>
                 </button>
             </div>
-
             <div className="container my-5">
+                {dolarData && (
+                    <div className="row">
+                        <div className="col-md-9">
+                            <h2 className="mb-4 mt-4">Döviz Kurları</h2>
+                            {dolarData ? (
+                                <div className="doviz-kurlari">
+                                    <p><strong>Döviz:</strong> {dolarData.code}</p>
+                                    <p><strong>Alış:</strong> {dolarData.banknoteBuying} TL</p>
+                                    <p><strong>Satış:</strong> {dolarData.banknoteSelling} TL</p>
+                                </div>
+                            ) : (
+                                <p>Döviz verisi yükleniyor...</p>
+                            )}
+                    </div>
+                </div>
+                )}
                 <div className="row">
                     <div className="col-md-9">
                         <h2 className="mb-4 mt-4">Haberler</h2>
