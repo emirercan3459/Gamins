@@ -25,10 +25,7 @@ function Anasayfa() {
             <div id="newsSlider" className="carousel slide container mt-5" data-bs-ride="carousel">
                 <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
                     {sliderHaberler.map((haber, index) => (
-                        <div
-                            key={haber.haber_id}
-                            className={`carousel-item ${index === 0 ? "active" : ""}`}
-                        >
+                        <div key={haber.haber_id} className={`carousel-item ${index === 0 ? "active" : ""}`}>
                             <div className={`slider slide`} style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${haber.haber_resim})`}}>
                                 <Link to={`/haberler/${haber.haber_id}`} className="text-white text-decoration-none">
                                     <span className="h1">{haber.haber_baslik}</span>
