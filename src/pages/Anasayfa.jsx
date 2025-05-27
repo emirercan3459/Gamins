@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import haberler from '../data/haberler';
 import HaberCard from "../components/Habercard";
+import EnCokOkunanlar from "../components/EnCokOkunanlar";
 function Anasayfa() {
     const [dolarData, setDolarData] = useState(null);
     const [euroData, setEuroData] = useState(null);
