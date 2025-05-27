@@ -104,10 +104,11 @@ header{
 .news-card .card-text {
      color: #adb0bc;
 }
- .news-card a {
+.news-card a {
      color: #00d1b2;
 }
- .slide {
+
+.slide {
      background-size: cover;
      background-repeat: no-repeat;
      background-position: center;
