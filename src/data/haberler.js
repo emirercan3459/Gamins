@@ -35,7 +35,7 @@ const haberler = [
 						</p>
       `,
       haber_tarih: "2024-12-10",
-      haber_goruntulenme: 20,
+      haber_goruntulenme: 25,
       haber_paylasan: "Admin"
     },
     {
@@ -82,7 +82,7 @@ const haberler = [
 </div>
       `,
       haber_tarih: "2024-12-10",
-      haber_goruntulenme: 20,
+      haber_goruntulenme: 50,
       haber_paylasan: "Admin"
     },
     {
@@ -152,7 +152,7 @@ const haberler = [
 </div>
       `,
       haber_tarih: "2024-12-10",
-      haber_goruntulenme: 20,
+      haber_goruntulenme: 65,
       haber_paylasan: "Admin"
     },
     {
@@ -216,7 +216,7 @@ const haberler = [
 </div>
       `,
       haber_tarih: "2024-12-10",
-      haber_goruntulenme: 20,
+      haber_goruntulenme: 7,
       haber_paylasan: "Admin"
     },
     {
@@ -310,7 +310,7 @@ const haberler = [
 </div>
       `,
       haber_tarih: "2024-12-10",
-      haber_goruntulenme: 20,
+      haber_goruntulenme: 3,
       haber_paylasan: "Admin"
     },
     {
@@ -357,7 +357,7 @@ const haberler = [
 </div>
 `,
       haber_tarih: "2024-12-10",
-      haber_goruntulenme: 20,
+      haber_goruntulenme: 1,
       haber_paylasan: "Admin"
     },
   ];
