@@ -49,12 +49,16 @@ function Anasayfa() {
                 {dolarData && (
                     <div className="row">
                         <div className="col-md-9">
+                        </div>
+                        <div className="col-md-3">
                             <h2 className="mb-4 mt-4">Döviz Kurları</h2>
                             {dolarData ? (
                                 <div className="doviz-kurlari">
-                                    <p><strong>Döviz:</strong> {dolarData.code}</p>
-                                    <p><strong>Alış:</strong> {dolarData.banknoteBuying} TL</p>
-                                    <p><strong>Satış:</strong> {dolarData.banknoteSelling} TL</p>
+                                    <p>
+                                        <strong>Dolar (USD):</strong>
+                                        Alış: {dolarData["Alış"]} TL |
+                                        Satış: {dolarData["Satış"]} TL
+                                    </p>
                                 </div>
                             ) : (
                                 <p>Döviz verisi yükleniyor...</p>
