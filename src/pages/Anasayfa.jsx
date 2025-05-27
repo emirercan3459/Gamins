@@ -100,11 +100,12 @@ function Anasayfa() {
                         <div className="col-md-12 text-center justify-content-center mt-5">
                             {dolarData ? (
                                 <div className="doviz-kurlari">
-                                    <p>Oyun Meraklılar için anlık döviz kurları</p>
+                                    <p>Oyun Meraklıları için anlık döviz kurları</p>
                                     <p>
                                         <strong>Dolar (USD):</strong>
                                         Alış: {dolarData["Alış"]} TL |
                                         Satış: {dolarData["Satış"]} TL
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <strong>Euro (EUR):</strong>
                                         Alış: {euroData["Alış"]} TL |
                                         Satış: {euroData["Satış"]} TL
