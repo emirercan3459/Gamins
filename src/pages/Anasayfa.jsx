@@ -14,30 +14,29 @@ function Anasayfa() {
                setEuroData(data["EUR"]);
             })
            .catch(err => console.error("Döviz verisi alınamadı:", err));
+           
+        const karisik = [...haberler].sort(() => 0.5 - Math.random()).slice(0, 2);
+        setSliderHaberler(karisik);
     }, []);
     return (
         <>
 
             <div id="newsSlider" className="carousel slide container mt-5" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <div className="slider slide1">
-                            <Link to="haberler/1" className="text-white text-decoration-none">
-                                <span className="h1">Steam Kış İndirimleri Başlıyor</span>
-                                <br />
-                                Detaylar için hemen tıkla!
-                            </Link>
+                <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                    {sliderHaberler.map((haber, index) => (
+                        <div
+                            key={haber.haber_id}
+                            className={`carousel-item ${index === 0 ? "active" : ""}`}
+                        >
+                            <div className={`slider slide`} style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${haber.haber_resim})`}}>
+                                <Link to={`/haberler/${haber.haber_id}`} className="text-white text-decoration-none">
+                                    <span className="h1">{haber.haber_baslik}</span>
+                                    <br />
+                                    Detaylar için hemen tıkla!
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="slider slide2">
-                            <Link to="haberler/2" className="text-white text-decoration-none">
-                                <span className="h1">Epic Games'in ücretsiz oyunu duyruldu!</span>
-                                <br />
-                                Detaylar için hemen tıkla!
-                            </Link>
-                        </div>
-                    </div>
+                    ))}
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#newsSlider" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>

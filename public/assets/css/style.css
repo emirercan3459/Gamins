@@ -107,15 +107,7 @@ header{
  .news-card a {
      color: #00d1b2;
 }
- .slide1 {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/slide1.png');
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-position: center;
-}
-
-.slide2 {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/slide2.png');
+ .slide {
      background-size: cover;
      background-repeat: no-repeat;
      background-position: center;
