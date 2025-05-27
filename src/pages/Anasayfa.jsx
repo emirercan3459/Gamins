@@ -48,26 +48,6 @@ function Anasayfa() {
                 </button>
             </div>
             <div className="container my-5">
-                {dolarData && (
-                    <div className="row">
-                        <div className="col-md-12">
-                            {dolarData ? (
-                                <div className="doviz-kurlari">
-                                    <p>
-                                        <strong>Dolar (USD):</strong>
-                                        Alış: {dolarData["Alış"]} TL |
-                                        Satış: {dolarData["Satış"]} TL
-                                        <strong>Euro (EUR):</strong>
-                                        Alış: {euroData["Alış"]} TL |
-                                        Satış: {euroData["Satış"]} TL
-                                    </p>
-                                </div>
-                            ) : (
-                                <p>Döviz verisi yükleniyor...</p>
-                            )}
-                    </div>
-                </div>
-                )}
                 <div className="row">
                     <div className="col-md-9">
                         <h2 className="mb-4 mt-4">Haberler</h2>
@@ -115,6 +95,27 @@ function Anasayfa() {
                             </div>
                         </div>
                     </div>
+                {dolarData && (
+                    <div className="row">
+                        <div className="col-md-12 text-center justify-content-center mt-5">
+                            {dolarData ? (
+                                <div className="doviz-kurlari">
+                                    <p>Oyun Meraklılar için anlık döviz kurları</p>
+                                    <p>
+                                        <strong>Dolar (USD):</strong>
+                                        Alış: {dolarData["Alış"]} TL |
+                                        Satış: {dolarData["Satış"]} TL
+                                        <strong>Euro (EUR):</strong>
+                                        Alış: {euroData["Alış"]} TL |
+                                        Satış: {euroData["Satış"]} TL
+                                    </p>
+                                </div>
+                            ) : (
+                                <p>Döviz verisi yükleniyor...</p>
+                            )}
+                    </div>
+                </div>
+                )}
                 </div>
             </div>
         </>
