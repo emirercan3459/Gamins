@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react"; 
 import { Link } from "react-router-dom";
 import haberler from '../data/haberler';
 import HaberCard from "../components/Habercard";
 function Anasayfa() {
+    const [dolarData, setDolarData] = useState(null);
+    useEffect(() => {
+        fetch("https://finans.truncgil.com/today.json")
+            .then(res => res.json())
+           .then(data => {
+               setDolarData(data["USD"]);
+            })
+           .catch(err => console.error("Döviz verisi alınamadı:", err));
+    }, []);
     return (
         <>
+        {dolarData && (
+    <div className="container mt-4">
+        <div className="alert alert-info text-center">
+            <strong>💵 Dolar Alış:</strong> {dolarData["Alış"]} ₺ &nbsp; | &nbsp;
+            <strong>Satış:</strong> {dolarData["Satış"]} ₺ &nbsp; | &nbsp;
+            <strong>Değişim:</strong> {dolarData["Değişim"]}
+        </div>
+    </div>
+)}
             <div id="newsSlider" className="carousel slide container mt-5" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
