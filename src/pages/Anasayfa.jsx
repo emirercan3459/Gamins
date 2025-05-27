@@ -4,6 +4,7 @@ import haberler from '../data/haberler';
 import HaberCard from "../components/Habercard";
 function Anasayfa() {
     const [dolarData, setDolarData] = useState(null);
+    const [euroData, setEuroData] = useState(null);
     useEffect(() => {
         fetch("https://finans.truncgil.com/today.json")
             .then(res => res.json())
@@ -48,16 +49,16 @@ function Anasayfa() {
             <div className="container my-5">
                 {dolarData && (
                     <div className="row">
-                        <div className="col-md-9">
-                        </div>
-                        <div className="col-md-3">
-                            <h2 className="mb-4 mt-4">Döviz Kurları</h2>
+                        <div className="col-md-12">
                             {dolarData ? (
                                 <div className="doviz-kurlari">
                                     <p>
                                         <strong>Dolar (USD):</strong>
                                         Alış: {dolarData["Alış"]} TL |
                                         Satış: {dolarData["Satış"]} TL
+                                        <strong>Euro (EUR):</strong>
+                                        Alış: {euroData["Alış"]} TL |
+                                        Satış: {euroData["Satış"]} TL
                                     </p>
                                 </div>
                             ) : (
