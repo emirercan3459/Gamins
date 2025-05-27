@@ -7,7 +7,14 @@ function HaberDetay({ isLoggedIn }) {
     if (!isLoggedIn) {
         return (
             <div className="container my-5 text-center">
-                <h2>Haber Detayına Erişmek İçin Giriş Yapmalısınız</h2>
+			<div class="row">
+				<div class="page-title">
+					<div class="container text-center">
+						<h1>UYARI</h1>
+						<h5 style={{ color: "lightgray" }}>Haber detaylarını görebilmek için giriş yapmalısınız.</h5>
+					</div>
+				</div>
+			</div>
             </div>
         );
     }
