@@ -26,7 +26,6 @@ function Footer() {
                                 <p>
                                     <Link to={`/haberler/${haber.haber_id}`} className="text-white">{haber.haber_baslik}</Link>
                                 </p>
-                            {index < populerHaberler.length - 1 && <hr />}
                             </>
                         ))}
                     </div>
