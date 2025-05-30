@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import haberler from "../data/haberler";
 
 function Footer() {
+    const populerHaberler = [...haberler]
+        .sort((a, b) => b.haber_goruntulenme - a.haber_goruntulenme)
+        .slice(0, 3);
     return (
         <footer className="text-center text-lg-start text-white">
             <div className="container text-center text-md-start mt-5">
@@ -15,17 +19,16 @@ function Footer() {
                     </div>
 
                     <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 className="text-uppercase fw-bold">Son Okunanlar</h6>
+                        <h6 className="text-uppercase fw-bold">En Çok Okunanlar</h6>
                         <hr className="mb-4 mt-0 d-inline-block mx-auto" />
-                        <p>
-                            <Link to="/haber-1" className="text-white">Steam Kış İndirimleri</Link>
-                        </p>
-                        <p>
-                            <Link to="/haber-6" className="text-white">EpicGames Ücretsiz Oyun</Link>
-                        </p>
-                        <p>
-                            <Link to="/haber-5" className="text-white">Valorant Yeni Karakter</Link>
-                        </p>
+                        {populerHaberler.map((haber, index) => (
+                            <>
+                                <p>
+                                    <Link to={`/haberler/${haber.haber_id}`} className="text-white">{haber.haber_baslik}</Link>
+                                </p>
+                            {index < populerHaberler.length - 1 && <hr />}
+                            </>
+                        ))}
                     </div>
 
                     <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">

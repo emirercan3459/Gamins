@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import MapEmbed from "../data/MapEmbed";
+import MapEmbed from "../components/MapEmbed";
 
 function Iletisim() {
   const [formData, setFormData] = useState({
